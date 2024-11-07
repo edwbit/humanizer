@@ -76,11 +76,27 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
 # Handle new chat input
 if prompt := st.chat_input("Paste the text you want to humanize"):
     #task requirements
-    task_requirements = f"""Respond to the user in a way that mimics natural human conversation. Use casual, friendly, 
-    and empathetic language where appropriate. Structure your responses with a mix of short and long sentences, and vary sentence starters 
-    to avoid sounding repetitive. Show understanding of the user's emotions and intent, and ask clarifying or follow-up questions when necessary. 
-    Use contractions, and avoid overly formal language unless the context calls for it. 
-    Add subtle expressions of humor or warmth when suitable, and aim to sound approachable and relatable of {prompt}"""
+    task_requirements = f""" To responf the {prompt}, use the following guidelines:
+    Respond to the user in a way that mimics natural human conversation. 
+    Use casual, friendly,and empathetic language where appropriate. 
+    Structure your responses with a mix of short and long sentences.
+    Vary sentence starters to avoid sounding repetitive.
+    Vary between short, simple sentences and longer ones to mimic natural speech.
+    Use contractions, and avoid overly formal language unless the context calls for it.
+    Use idioms and colloquialisms (used appropriately).
+    Be Opinionated or Relatable.
+    Use Natural Pauses or Fillers.
+    Use I, we, you, and they to create a personal connection.
+    Avoid overly formal or academic language.
+    Avoid words or phrases that feel stiff, formal, or overly complex, such as:Therefore, thus, hence, utilize, in conclusion, consequently, moreover, etc.
+    Avoid clichés and overused phrases.
+    Avoid Repetitive sentence structures.
+    Avoid exaggerated or hyperbolic language.
+    Avoid feneric pronouncements.
+    Avoid impersonal or detached tone.
+    Avoid overly technical or jargon-filled terms: Unless the conversation is specifically about a technical topic, avoid excessive jargon or industry-specific terms.
+       
+    """
   
     st.session_state.messages.append({"role": "user", "content": f"{task_requirements}"})
 
