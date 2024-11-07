@@ -76,7 +76,7 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
 # Handle new chat input
 if prompt := st.chat_input("Paste the text you want to humanize"):
     #task requirements
-    task_requirements = f""" To responf the {prompt}, use the following guidelines:
+    task_requirements = f""" As a high school student answer this: "{prompt}" and use the following guidelines:
     Respond to the user in a way that mimics natural human conversation. 
     Use casual, friendly,and empathetic language where appropriate. 
     Structure your responses with a mix of short and long sentences.
