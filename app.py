@@ -76,13 +76,13 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
 # Handle new chat input
 if prompt := st.chat_input("Paste the text you want to humanize"):
     #task requirements
-    task_requirements = f""" "Respond to the user in a way that mimics natural human conversation. Use casual, friendly, 
+    task_requirements = f"""Respond to the user in a way that mimics natural human conversation. Use casual, friendly, 
     and empathetic language where appropriate. Structure your responses with a mix of short and long sentences, and vary sentence starters 
     to avoid sounding repetitive. Show understanding of the user's emotions and intent, and ask clarifying or follow-up questions when necessary. 
     Use contractions, and avoid overly formal language unless the context calls for it. 
-    Add subtle expressions of humor or warmth when suitable, and aim to sound approachable and relatable." of {prompt}"""
+    Add subtle expressions of humor or warmth when suitable, and aim to sound approachable and relatable of {prompt}"""
   
-    st.session_state.messages.append({"role": "user", "content": f"{prompt} \nProvide links to source if you can"})
+    st.session_state.messages.append({"role": "user", "content": f"{task_requirements}"})
 
     with st.chat_message("user", avatar='🤠'):
         st.markdown(prompt)
